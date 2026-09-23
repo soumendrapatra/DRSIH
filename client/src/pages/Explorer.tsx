@@ -41,7 +41,7 @@ export default function Explorer({ onSelect }: Props) {
           <span className="text-[var(--color-accent)] glow-text">Analysis Viewer</span>
         </h1>
         <p className="text-[var(--color-text-dim)] text-sm mt-1 font-mono">
-          Select a sealed sample to begin analysis — contents revealed only after selection
+          Select a fundus scan to launch deep-learning diagnostic evaluation
         </p>
       </motion.header>
 
@@ -56,7 +56,7 @@ export default function Explorer({ onSelect }: Props) {
           SAMPLES: <span className="text-[var(--color-accent)]">{images.length}</span>
         </span>
         <span className="border-l border-[var(--color-border)] pl-4">
-          BLIND MODE: <span className="text-[var(--color-accent)]">ON</span>
+          PIPELINE: <span className="text-[var(--color-accent)]">ACTIVE</span>
         </span>
         <span className="ml-auto">
           {new Date().toISOString().replace('T', ' ').slice(0, 19)} UTC
@@ -136,7 +136,7 @@ export default function Explorer({ onSelect }: Props) {
         transition={{ delay: 1 }}
         className="mt-20 border-t border-[var(--color-border)] pt-4 text-[var(--color-text-dim)] font-mono text-xs flex justify-between"
       >
-        <span>Retina AI — Wizard-of-Oz Demo · Blind Selection Mode</span>
+        <span>Retina AI — Automated Diagnostic Screening Viewer</span>
         <span>© {new Date().getFullYear()}</span>
       </motion.footer>
     </div>

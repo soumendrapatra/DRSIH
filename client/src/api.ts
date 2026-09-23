@@ -1,11 +1,5 @@
 /**
- * API client — mirrors the server's blind-selection contract exactly.
- *
- * GET /api/images      → ImageEntry[]  ({ id, slotLabel } ONLY)
- * GET /api/analysis/:id → Analysis     (full data + resolved originalImage)
- *
- * No heatmapImage anywhere — removed from schema, API response, and types.
- * category is free-text, sourced as-is from the JSON; never validated here.
+ * API client — interfaces and fetch wrappers.
  */
 
 // ─── List endpoint ────────────────────────────────────────────────────────────
@@ -13,8 +7,10 @@
 export interface ImageEntry {
   /** Numeric string id, e.g. "01" */
   id: string;
-  /** Server-generated label ("Sample 01") — reveals nothing about diagnosis */
+  /** Server-generated label ("Sample 01") */
   slotLabel: string;
+  /** URL to fundus image preview thumbnail */
+  thumbnail?: string;
 }
 
 // ─── Vessel analysis sub-type ─────────────────────────────────────────────────
@@ -28,9 +24,7 @@ export interface VesselAnalysis {
 // ─── Full analysis response ───────────────────────────────────────────────────
 
 export interface Analysis {
-  // ── Required fields ────────────────────────────────────────────────────────
   id: string;
-  /** Free-text DR grading label as stored in the source JSON — display as-is */
   category: string;
   displayName: string;
   condition: string;
@@ -40,10 +34,8 @@ export interface Analysis {
   recommendation: string;
   analysisSummary: string;
   processingTimeMs: number;
-  /** Resolved by backend from sample-folder/images/<id>.<ext> */
   originalImage: string;
 
-  // ── Optional extended fields (render only when present and non-empty) ───────
   vesselAnalysis?: VesselAnalysis;
   maculaStatus?: string;
   opticDiscStatus?: string;
