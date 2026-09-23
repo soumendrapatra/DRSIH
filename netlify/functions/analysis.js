@@ -1,16 +1,13 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-const data = require('./data.json');
+import { analyses } from './data.js';
 
 export async function handler(event) {
-  // Extract id from query params or path
   let id = event.queryStringParameters?.id;
   if (!id && event.path) {
     const parts = event.path.split('/');
     id = parts[parts.length - 1];
   }
 
-  const analysis = data.analyses?.[id];
+  const analysis = analyses?.[id];
 
   if (!analysis) {
     return {

@@ -1,6 +1,4 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-const data = require('./data.json');
+import { slots } from './data.js';
 
 export async function handler() {
   return {
@@ -11,7 +9,7 @@ export async function handler() {
     },
     body: JSON.stringify({
       success: true,
-      data: data.slots || [],
+      data: slots || [],
     }),
   };
 }
