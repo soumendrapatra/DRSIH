@@ -1,0 +1,30 @@
+{
+  "id": "09",
+  "category": "Severe NPDR",
+  "displayName": "Sample 09",
+  "condition": "Diabetic Retinopathy",
+  "confidence": 0.96,
+  "severity": "Severe",
+  "findings": [
+    "Massive confluent circinate hard exudate ring / macular star centered around central macula",
+    "Dense lipid exudate deposits with central intraretinal fluid thickening",
+    "Multiple dot and blot hemorrhages across superior and inferior temporal arcades",
+    "Cotton wool spot superior to disc near major arteriolar bifurcation",
+    "Significant microvascular leakage evident in central macula region"
+  ],
+  "vesselAnalysis": {
+    "arteriovenousRatio": "arteriolar narrowing",
+    "tortuosity": "moderate",
+    "neovascularization": "none detected"
+  },
+  "maculaStatus": "Severe exudative diabetic maculopathy with confluent lipid deposition involvement.",
+  "opticDiscStatus": "Optic disc margins sharp with normal cup-to-disc ratio (~0.35).",
+  "riskIndicators": [
+    "High risk of permanent central vision loss from chronic lipid deposition and edema",
+    "Advanced non-proliferative changes require urgent anti-VEGF or focal laser therapy"
+  ],
+  "recommendation": "Urgent referral to retina specialist within 1 week.",
+  "analysisSummary": "AI analysis demonstrates severe NPDR with extensive circinate hard exudates forming a prominent macular star pattern. Severe lipid accumulation and macular edema pose an immediate threat to visual acuity. Urgent vitreoretinal evaluation is strongly advised.",
+  "differentialConsiderations": "Retinal arterial macroaneurysm with circinate exudates; clinical history and widespread microaneurysms confirm diabetic etiology.",
+  "processingTimeMs": 2040
+}

@@ -1,31 +1,30 @@
 {
   "id": "02",
-  "category": "Grade 2 — Mild",
+  "category": "Proliferative DR",
   "displayName": "Sample 02",
-  "condition": "Glaucoma Suspect",
-  "confidence": 0.87,
-  "severity": "Mild",
+  "condition": "Diabetic Retinopathy",
+  "confidence": 0.94,
+  "severity": "Proliferative",
   "findings": [
-    "Cup-to-disc ratio estimated at 0.72 — elevated",
-    "Superior neuroretinal rim thinning detected",
-    "Asymmetric optic disc cupping between eyes noted",
-    "No definitive RNFL defect, but borderline thinning in superior arcade",
-    "IOP context required for complete risk stratification"
+    "Prominent neovascularization at the disc (NVD) with tortuous capillary loop extending over nasal margin",
+    "Venous beading and irregular vessel caliber noted along the superior vascular arcade",
+    "Multiple pinpoint microaneurysms scattered throughout the nasal and temporal peripapillary zones",
+    "Superficial flame-shaped hemorrhage adjacent to the inferior temporal vascular trunk",
+    "Mild retinal sheen indicative of early fibrous proliferation near the optic disc pole"
   ],
   "vesselAnalysis": {
-    "arteriovenousRatio": "3:4 (normal range)",
-    "tortuosity": "Moderate arterial tortuosity",
-    "neovascularization": "Absent"
+    "arteriovenousRatio": "arteriolar narrowing with venous engorgement",
+    "tortuosity": "severe",
+    "neovascularization": "suspected at disc"
   },
-  "maculaStatus": "Macula appears healthy with no central involvement. No drusen or pigmentary changes observed.",
-  "opticDiscStatus": "Elevated CDR at 0.72; superior rim thinning present. Asymmetric cupping raises index of suspicion for early glaucomatous damage.",
+  "maculaStatus": "Foveal contour preserved; subtle lipid exudate deposits noted temporal to macula.",
+  "opticDiscStatus": "Disc margins obscured by active neovascular loop network; cup evaluation limited.",
   "riskIndicators": [
-    "Family history of primary open-angle glaucoma",
-    "Elevated IOP suspected — requires tonometry confirmation",
-    "Age > 55 years with asymmetric CDR"
+    "High risk of vitreous hemorrhage or tractional retinal detachment without timely panretinal photocoagulation",
+    "Immediate intervention required to arrest progressive ischemic neovascularization"
   ],
-  "recommendation": "Urgent referral to glaucoma specialist. Baseline visual field testing (Humphrey 24-2) and OCT RNFL assessment essential. IOP measurement and gonioscopy recommended.",
-  "analysisSummary": "Optic disc morphology raises concern for glaucomatous damage. The elevated cup-to-disc ratio of 0.72 with observed rim thinning in the superior sector exceeds typical population norms. While no frank RNFL defect is confirmed by fundus imaging alone, the constellation of findings warrants full glaucoma workup. Early intervention can significantly slow disease progression.",
-  "differentialConsiderations": "Normal tension glaucoma cannot be excluded without IOP measurement. Optic neuritis considered but the absence of pain on eye movement and the chronicity of presentation make this unlikely. Physiological large disc (megalopapilla) remains a differential — nerve fiber layer OCT will discriminate.",
-  "processingTimeMs": 2103
+  "recommendation": "Urgent retinal specialist referral recommended within 1 to 2 weeks.",
+  "analysisSummary": "AI analysis detects proliferative diabetic retinopathy characterized by active disc neovascularization (NVD) and severe vascular tortuosity. Ischemic vascular changes present a substantial risk for vitreous hemorrhage and visual loss. Prompt vitreoretinal consultation for panretinal photocoagulation or anti-VEGF therapy is strongly indicated.",
+  "differentialConsiderations": "Ischemic central retinal vein occlusion considered; however, NVD distribution and chronic vascular remodeling align primarily with proliferative DR.",
+  "processingTimeMs": 1850
 }

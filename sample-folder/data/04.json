@@ -1,0 +1,30 @@
+{
+  "id": "04",
+  "category": "Proliferative DR",
+  "displayName": "Sample 04",
+  "condition": "Diabetic Retinopathy",
+  "confidence": 0.95,
+  "severity": "Proliferative",
+  "findings": [
+    "Fine neovascular capillary arcade forming at the superior edge of the optic nerve head",
+    "Moderate venous dilations and vessel caliber irregularity across superior arcade branch",
+    "Multiple intraretinal dot hemorrhages scattered across nasal and temporal quadrants",
+    "Focal area of capillary non-perfusion suspected along superior temporal vascular distribution",
+    "Absence of preretinal hemorrhage or tractional retinal elevation"
+  ],
+  "vesselAnalysis": {
+    "arteriovenousRatio": "moderate arteriolar narrowing",
+    "tortuosity": "moderate",
+    "neovascularization": "suspected at disc"
+  },
+  "maculaStatus": "Central macula clear with well-preserved foveal reflex; no hard exudates within 1 disc diameter.",
+  "opticDiscStatus": "Disc margin partially obscured superiorly by early neovascular growth (NVD).",
+  "riskIndicators": [
+    "High risk of proliferative progression and potential vitreous bleeding if untreated",
+    "Ischemic drive indicates need for early anti-VEGF or laser photocoagulation"
+  ],
+  "recommendation": "Urgent retinal specialist referral recommended within 2 weeks.",
+  "analysisSummary": "AI screening indicates proliferative diabetic retinopathy with active disc neovascularization. Vascular tortuosity and surrounding microvascular changes highlight significant retinal ischemia. Prompt specialist evaluation for panretinal laser or anti-VEGF therapy is recommended to prevent disease progression.",
+  "differentialConsiderations": "Ocular ischemic syndrome evaluated; presentation aligns with proliferative diabetic microangiopathy.",
+  "processingTimeMs": 1780
+}

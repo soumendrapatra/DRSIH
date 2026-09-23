@@ -1,0 +1,30 @@
+{
+  "id": "06",
+  "category": "Severe NPDR",
+  "displayName": "Sample 06",
+  "condition": "Diabetic Retinopathy",
+  "confidence": 0.93,
+  "severity": "Severe",
+  "findings": [
+    "Large dense subretinal/foveal dark lesion / deep macular hemorrhage causing foveal obscurity",
+    "Extensive retinal edema and thickening extending throughout the central macula region",
+    "Scattered microaneurysms and blot hemorrhages across superior and inferior temporal quadrants",
+    "IRMA (intraretinal microvascular abnormalities) suspected along temporal vascular arcade",
+    "Arteriolar narrowing and irregular venous caliber surrounding macular region"
+  ],
+  "vesselAnalysis": {
+    "arteriovenousRatio": "moderate narrowing",
+    "tortuosity": "moderate",
+    "neovascularization": "none detected"
+  },
+  "maculaStatus": "Severe macular involvement with central hemorrhage/fluid collection. High suspicion of diabetic macular edema (DME).",
+  "opticDiscStatus": "Optic disc margins distinct; slight temporal pallor.",
+  "riskIndicators": [
+    "High risk of severe central visual acuity loss due to macular hemorrhage/edema",
+    "High probability of progression to proliferative stage without prompt treatment"
+  ],
+  "recommendation": "Urgent retinal specialist referral recommended within 1 to 2 weeks for OCT and therapeutic intervention.",
+  "analysisSummary": "AI analysis detects severe non-proliferative diabetic retinopathy with major macular pathology, including dense foveal hemorrhage and retinal thickening. Immediate specialist evaluation with optical coherence tomography (OCT) and potential anti-VEGF injection is recommended to protect central vision.",
+  "differentialConsiderations": "Age-related macular degeneration (AMD) with choroidal neovascular membrane or central retinal vein occlusion considered; severe diabetic maculopathy is the primary impression.",
+  "processingTimeMs": 2150
+}

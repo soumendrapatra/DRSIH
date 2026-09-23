@@ -1,0 +1,29 @@
+{
+  "id": "05",
+  "category": "Mild NPDR",
+  "displayName": "Sample 05",
+  "condition": "Diabetic Retinopathy",
+  "confidence": 0.89,
+  "severity": "Mild",
+  "findings": [
+    "Scattered small microaneurysms detected in the temporal retina outside the avascular zone",
+    "Focal mild venous tortuosity along the inferior vascular branch",
+    "Rare tiny punctate dot hemorrhage near the superior temporal arcade",
+    "No cotton wool spots, hard exudates, or neovascularization detected in visible field"
+  ],
+  "vesselAnalysis": {
+    "arteriovenousRatio": "within normal limits",
+    "tortuosity": "mild",
+    "neovascularization": "none detected"
+  },
+  "maculaStatus": "Foveal reflex intact; no hard exudates or macular thickening observed.",
+  "opticDiscStatus": "Normal disc appearance with sharp margins and cup-to-disc ratio of 0.35.",
+  "riskIndicators": [
+    "Low to moderate risk of progression within 12 months under good metabolic control",
+    "Routine semi-annual or annual monitoring recommended"
+  ],
+  "recommendation": "Routine ophthalmology follow-up recommended within 6 to 12 months.",
+  "analysisSummary": "AI visual screening indicates mild non-proliferative diabetic retinopathy (NPDR) characterized by sparse microaneurysms and mild vascular tortuosity. No maculopathy or high-risk features were identified. Systemic control optimization and routine follow-up are advised.",
+  "differentialConsiderations": "Early hypertensive microangiopathy considered due to vessel tortuosity; mild NPDR remains primary diagnosis.",
+  "processingTimeMs": 1310
+}

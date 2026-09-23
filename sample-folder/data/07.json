@@ -1,0 +1,30 @@
+{
+  "id": "07",
+  "category": "Severe NPDR",
+  "displayName": "Sample 07",
+  "condition": "Diabetic Retinopathy",
+  "confidence": 0.92,
+  "severity": "Severe",
+  "findings": [
+    "Circumscribed subretinal fluid lesion / serous macular detachment with lipid fluid level",
+    "Focal central hemorrhage within macula surrounded by dense exudative ring",
+    "Cotton wool spot indicating nerve fiber layer infarction in superior temporal quadrant",
+    "Venous beading present along the main inferior temporal retinal vein",
+    "Multiple blot hemorrhages in 3 of 4 retinal quadrants"
+  ],
+  "vesselAnalysis": {
+    "arteriovenousRatio": "arteriolar narrowing present",
+    "tortuosity": "moderate",
+    "neovascularization": "none detected"
+  },
+  "maculaStatus": "Severe macular edema with subretinal accumulation and central exudative ring.",
+  "opticDiscStatus": "Optic disc margins sharp with normal cup-to-disc ratio (~0.4).",
+  "riskIndicators": [
+    "Critical risk of irreversible macular photoreceptor damage if macular fluid persists",
+    "Meets 4-2-1 rule criteria for severe NPDR with high rate of proliferative conversion"
+  ],
+  "recommendation": "Urgent referral to retina specialist within 1 to 2 weeks.",
+  "analysisSummary": "AI evaluation reveals severe non-proliferative diabetic retinopathy featuring clinically significant macular edema with serous detachment and exudative accumulation. Multi-quadrant microvascular abnormalities indicate advanced ischemia. Prompt vitreoretinal intervention is indicated.",
+  "differentialConsiderations": "Central serous chorioretinopathy or macroaneurysm rupture considered; diffuse diabetic microangiopathy confirmed by widespread quadrant involvement.",
+  "processingTimeMs": 1940
+}

@@ -1,0 +1,30 @@
+{
+  "id": "08",
+  "category": "Moderate NPDR",
+  "displayName": "Sample 08",
+  "condition": "Diabetic Retinopathy",
+  "confidence": 0.90,
+  "severity": "Moderate",
+  "findings": [
+    "Large focal yellowish hard exudate plaque located temporal to the macula",
+    "Multiple discrete cotton wool spots scattered along superior and inferior arcades",
+    "Focal microaneurysms and dot hemorrhages in superior temporal quadrant",
+    "Mild retinal edema adjacent to temporal exudate plaque",
+    "Normal vessel branching pattern with localized mild tortuosity"
+  ],
+  "vesselAnalysis": {
+    "arteriovenousRatio": "within normal limits",
+    "tortuosity": "mild",
+    "neovascularization": "none detected"
+  },
+  "maculaStatus": "Hard exudates encroaching temporal foveal margin; macular edema suspected.",
+  "opticDiscStatus": "Optic disc margins distinct, normal rim color, CDR 0.35.",
+  "riskIndicators": [
+    "Risk of macular edema progression given proximity of hard exudate plaque to fovea",
+    "Cotton wool spots signal active retinal micro-infarctions"
+  ],
+  "recommendation": "Ophthalmology follow-up recommended within 2 to 4 weeks.",
+  "analysisSummary": "AI visual screening identifies moderate NPDR characterized by prominent hard exudate plaques and multiple cotton wool spots. The proximity of exudative deposits to the macula warrants OCT imaging to assess for macular edema.",
+  "differentialConsiderations": "Hypertensive retinopathy with macular star or radiation retinopathy considered; pattern aligns with moderate diabetic retinopathy.",
+  "processingTimeMs": 1620
+}

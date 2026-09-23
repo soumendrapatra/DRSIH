@@ -1,32 +1,30 @@
 {
   "id": "01",
-  "category": "Moderate NPDR",
+  "category": "No DR",
   "displayName": "Sample 01",
   "condition": "Diabetic Retinopathy",
-  "confidence": 0.94,
-  "severity": "Moderate",
+  "confidence": 0.98,
+  "severity": "None",
   "findings": [
-    "Microaneurysms detected in the superior temporal quadrant",
-    "Hard exudates present near the foveal region",
-    "Dot and blot hemorrhages in multiple quadrants",
-    "No neovascularization observed at this stage",
-    "Mild macular edema suspected — OCT recommended"
+    "Optic nerve head demonstrates sharp, well-demarcated margins with normal neuroretinal rim color",
+    "Macular central foveal reflex is crisp and intact with no evidence of edema or exudates",
+    "Retinal microvasculature shows normal vessel caliber and symmetric branching in all four quadrants",
+    "No microaneurysms, dot-blot hemorrhages, or cotton wool spots observed across the visible fundus",
+    "Peripheral retina is clear with no retinal tears, lattice degeneration, or abnormal pigmentation"
   ],
   "vesselAnalysis": {
-    "arteriovenousRatio": "2:3 (borderline)",
-    "tortuosity": "Mild venous tortuosity",
-    "neovascularization": "Absent"
+    "arteriovenousRatio": "within normal limits (2:3)",
+    "tortuosity": "none",
+    "neovascularization": "none detected"
   },
-  "maculaStatus": "Foveal reflex present; subtle thickening noted on clinical exam. Clinically significant macular edema (CSME) cannot be excluded without OCT.",
-  "opticDiscStatus": "Disc margins sharp; cup-to-disc ratio 0.4; no disc pallor or swelling.",
+  "maculaStatus": "Normal foveal reflex with no clinically significant macular edema or exudative deposits.",
+  "opticDiscStatus": "Crisp disc margins with standard physiological cup-to-disc ratio (~0.35).",
   "riskIndicators": [
-    "Uncontrolled HbA1c > 8% (patient-reported)",
-    "Duration of diabetes > 10 years",
-    "Bilateral involvement suspected based on clinical context",
-    "Suboptimal blood pressure control documented"
+    "Low current risk of retinopathy progression based on baseline fundus features",
+    "Annual diabetic eye screening protocol recommended to monitor long-term status"
   ],
-  "recommendation": "Refer to retinal specialist within 2 weeks. Optimize glycemic and blood pressure control. Schedule fluorescein angiography to confirm macular involvement.",
-  "analysisSummary": "The AI model identified characteristics consistent with moderate non-proliferative diabetic retinopathy (NPDR). Key vascular lesions including microaneurysms, hemorrhages, and exudates are localized primarily in the temporal quadrant. The absence of neovascularization suggests the disease has not yet progressed to the proliferative stage, but macular edema risk remains elevated. Prompt specialist review is advised.",
-  "differentialConsiderations": "Hypertensive retinopathy excluded based on lack of AV nicking and flame-shaped hemorrhages. Branch retinal vein occlusion considered but distribution pattern is inconsistent with a single vessel territory. Radiation retinopathy unlikely without exposure history.",
-  "processingTimeMs": 1842
+  "recommendation": "Routine annual ophthalmology follow-up recommended within 12 months.",
+  "analysisSummary": "AI screening analysis indicates a normal retinal examination without visual signs of diabetic retinopathy. Optic disc architecture, vascular caliber, and macular reflex are within standard non-pathological limits. Continued routine annual screening and optimal systemic metabolic control are advised.",
+  "differentialConsiderations": "Normal fundus examination with no alternative pathology identified.",
+  "processingTimeMs": 1120
 }

@@ -1,0 +1,30 @@
+{
+  "id": "10",
+  "category": "Proliferative DR",
+  "displayName": "Sample 10",
+  "condition": "Diabetic Retinopathy",
+  "confidence": 0.97,
+  "severity": "Proliferative",
+  "findings": [
+    "Dense sea-fan neovascular frond network extending across the optic disc (NVD)",
+    "Secondary neovascularization network along the inferior vascular arcade (NVE)",
+    "Marked vessel tortuosity and venous dilations across superior and inferior retinal trunks",
+    "Intraretinal microvascular abnormalities (IRMA) scattered in nasal and temporal quadrants",
+    "Preretinal tractional fibrous proliferation developing along vascular arcades"
+  ],
+  "vesselAnalysis": {
+    "arteriovenousRatio": "marked arteriolar narrowing and venous dilation",
+    "tortuosity": "severe",
+    "neovascularization": "suspected at disc and elsewhere"
+  },
+  "maculaStatus": "Macular reflex blunted by surrounding edema and vascular proliferation.",
+  "opticDiscStatus": "Optic disc obscured by dense neovascular network (NVD).",
+  "riskIndicators": [
+    "Extreme risk of severe vitreous hemorrhage and tractional retinal detachment",
+    "Immediate panretinal photocoagulation (PRP) and anti-VEGF therapy required"
+  ],
+  "recommendation": "Immediate urgent retinal specialist referral within 24-48 hours.",
+  "analysisSummary": "AI evaluation reveals advanced proliferative diabetic retinopathy with prominent disc (NVD) and peripheral (NVE) neovascularization. Severe vascular tortuosity and proliferative fronds represent high-risk PDR requiring emergency vitreoretinal intervention to prevent blindness.",
+  "differentialConsiderations": "Proliferative sickle cell retinopathy or ocular ischemic syndrome; patient history confirms advanced proliferative diabetic retinopathy.",
+  "processingTimeMs": 2380
+}
