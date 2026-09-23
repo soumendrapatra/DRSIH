@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { api, ImageEntry } from '../api'
+import { api } from '../api'
+import type { ImageEntry } from '../api'
 import ImageCard from '../components/ImageCard'
 
 interface Props {
@@ -14,14 +15,13 @@ export default function Explorer({ onSelect }: Props) {
 
   useEffect(() => {
     api.listImages()
-      .then(setImages)
-      .catch((e) => setError(e.message))
+      .then((data) => setImages(data))
+      .catch((e: unknown) => setError(e instanceof Error ? e.message : String(e)))
       .finally(() => setLoading(false))
   }, [])
 
   return (
     <div className="min-h-screen px-6 py-8 max-w-7xl mx-auto">
-
       {/* ── Header ── */}
       <motion.header
         initial={{ opacity: 0, y: -20 }}
@@ -63,14 +63,14 @@ export default function Explorer({ onSelect }: Props) {
         </span>
       </motion.div>
 
-      {/* ── Error ── */}
+      {/* ── Error state ── */}
       {error && (
         <div className="border border-red-800 bg-red-950/30 px-4 py-3 text-red-400 font-mono text-sm mb-8">
           ERR: {error}
         </div>
       )}
 
-      {/* ── Loading skeleton ── */}
+      {/* ── Loading state ── */}
       {loading && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {[...Array(4)].map((_, i) => (
@@ -115,7 +115,7 @@ export default function Explorer({ onSelect }: Props) {
         </motion.div>
       )}
 
-      {/* ── Card grid — flat, no grouping (category is sealed until click) ── */}
+      {/* ── Grid ── */}
       {!loading && !error && images.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {images.map((img, i) => (
@@ -142,4 +142,3 @@ export default function Explorer({ onSelect }: Props) {
     </div>
   )
 }
-

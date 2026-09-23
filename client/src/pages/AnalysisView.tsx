@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from 'react'
+import type { ReactNode } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
-import { api, Analysis } from '../api'
+import { api } from '../api'
+import type { Analysis } from '../api'
 import ScanningSequence from '../components/ScanningSequence'
 import ConfidenceMeter from '../components/ConfidenceMeter'
 import FundusImage from '../components/FundusImage'
@@ -13,8 +15,6 @@ interface Props {
 
 type Phase = 'loading' | 'scanning' | 'results' | 'error'
 
-// ─── Small reusable section wrapper ──────────────────────────────────────────
-// whileInView drives staggered scroll-reveal for all below-fold sections.
 function Section({
   label,
   delay = 0,
@@ -24,7 +24,7 @@ function Section({
   label: string
   delay?: number
   accent?: boolean
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <motion.div
@@ -38,11 +38,11 @@ function Section({
           : 'border-[var(--color-border)]'
       }`}
       style={accent ? { boxShadow: '0 0 16px rgba(240,165,0,0.06)' } : undefined}
-    >
+    > 
       <div
         className={`font-mono text-[10px] mb-3 uppercase tracking-widest ${
           accent ? 'text-[var(--color-amber)]' : 'text-[var(--color-text-dim)]'
-        }`}
+        }`} 
       >
         {label}
       </div>
@@ -56,7 +56,6 @@ export default function AnalysisView({ id, onBack }: Props) {
   const [phase, setPhase]       = useState<Phase>('loading')
   const [error, setError]       = useState<string | null>(null)
 
-  // Scroll-trigger refs for findings (inside right panel, near-fold)
   const findingsRef    = useRef<HTMLDivElement>(null)
   const findingsInView = useInView(findingsRef, { once: true, margin: '-60px' })
 
@@ -68,7 +67,7 @@ export default function AnalysisView({ id, onBack }: Props) {
         setAnalysis(data)
         setPhase('scanning')
       })
-      .catch((e) => {
+      .catch((e: Error) => {
         setError(e.message)
         setPhase('error')
       })
@@ -76,7 +75,6 @@ export default function AnalysisView({ id, onBack }: Props) {
 
   const onScanComplete = () => setPhase('results')
 
-  // Severity → accent colour (free-text field; fallback to red for unknowns)
   const severityColor =
     analysis?.severity === 'None'       ? '#34d399'
     : analysis?.severity === 'Mild'     ? '#fbbf24'
@@ -103,7 +101,7 @@ export default function AnalysisView({ id, onBack }: Props) {
         <span className="text-[var(--color-text)]">Sample {id}</span>
       </motion.div>
 
-      {/* ── Page header — shown after data loads (reveals category) ── */}
+      {/* ── Page header ── */}
       {analysis && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -115,7 +113,6 @@ export default function AnalysisView({ id, onBack }: Props) {
             <div>
               <div className="flex items-center gap-3 flex-wrap">
                 <h2 className="text-xl font-bold text-white">{analysis.displayName}</h2>
-                {/* Category badge — first real data the viewer sees */}
                 <span className="font-mono text-[10px] px-2 py-0.5 border border-[var(--color-accent)] text-[var(--color-accent)]">
                   {analysis.category}
                 </span>
@@ -132,14 +129,14 @@ export default function AnalysisView({ id, onBack }: Props) {
         </motion.div>
       )}
 
-      {/* ── Error ── */}
+      {/* ── Error state ── */}
       {phase === 'error' && (
         <div className="border border-red-800 bg-red-950/30 px-4 py-3 text-red-400 font-mono text-sm">
           ERR: {error ?? 'Failed to load analysis.'}
         </div>
       )}
 
-      {/* ── Loading spinner ── */}
+      {/* ── Loading state ── */}
       {phase === 'loading' && (
         <div className="flex flex-col items-center justify-center h-64 gap-4">
           <div className="w-8 h-8 border-2 border-[var(--color-border)] border-t-[var(--color-accent)] rounded-full animate-spin" />
@@ -149,7 +146,7 @@ export default function AnalysisView({ id, onBack }: Props) {
         </div>
       )}
 
-      {/* ── Scan sequence (unchanged choreography) ── */}
+      {/* ── Scan sequence ── */}
       <AnimatePresence>
         {phase === 'scanning' && analysis && (
           <ScanningSequence
@@ -168,9 +165,6 @@ export default function AnalysisView({ id, onBack }: Props) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-
-            {/* ── Two-column layout: image left, panel right ── */}
-            {/* Image column is wider (lg:w-3/5) since no heatmap occupies space */}
             <div className="flex flex-col lg:flex-row gap-6">
 
               {/* ── Left: single fundus image ── */}
@@ -181,7 +175,7 @@ export default function AnalysisView({ id, onBack }: Props) {
               {/* ── Right: analysis panel ── */}
               <div className="lg:w-2/5 space-y-4">
 
-                {/* Diagnosis block */}
+                {/* Diagnosis */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -219,7 +213,7 @@ export default function AnalysisView({ id, onBack }: Props) {
                   <ConfidenceMeter value={analysis.confidence} />
                 </motion.div>
 
-                {/* Findings list — scroll-triggered stagger */}
+                {/* Findings list */}
                 <div ref={findingsRef}>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -249,7 +243,7 @@ export default function AnalysisView({ id, onBack }: Props) {
                   </motion.div>
                 </div>
 
-                {/* Recommendation — typewriter */}
+                {/* Recommendation */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -270,12 +264,10 @@ export default function AnalysisView({ id, onBack }: Props) {
               </div>
             </div>
 
-            {/* ═══════════════════════════════════════════════════════════════
-                Below-fold sections — all scroll-triggered via whileInView
-                ═══════════════════════════════════════════════════════════════ */}
+            {/* ── Below-fold sections ── */}
             <div className="mt-6 space-y-4">
 
-              {/* Analysis Summary */}
+              {/* Summary */}
               <Section label="Analysis Summary" delay={0}>
                 <p className="text-sm text-[var(--color-text)] leading-7">
                   {analysis.analysisSummary}
@@ -286,7 +278,7 @@ export default function AnalysisView({ id, onBack }: Props) {
                 </div>
               </Section>
 
-              {/* Vessel Analysis — optional */}
+              {/* Vessel Analysis */}
               {analysis.vesselAnalysis && (
                 Object.values(analysis.vesselAnalysis).some(Boolean)
               ) && (
@@ -326,7 +318,7 @@ export default function AnalysisView({ id, onBack }: Props) {
                 </Section>
               )}
 
-              {/* Macula + Optic Disc — optional, side by side when both present */}
+              {/* Macula + Optic Disc */}
               {(analysis.maculaStatus || analysis.opticDiscStatus) && (
                 <motion.div
                   initial={{ opacity: 0, y: 24 }}
@@ -358,7 +350,7 @@ export default function AnalysisView({ id, onBack }: Props) {
                 </motion.div>
               )}
 
-              {/* Risk Indicators — optional */}
+              {/* Risk Indicators */}
               {analysis.riskIndicators && analysis.riskIndicators.length > 0 && (
                 <Section label={`Risk Indicators [${analysis.riskIndicators.length}]`} delay={0.12}>
                   <ul className="space-y-2">
@@ -379,7 +371,7 @@ export default function AnalysisView({ id, onBack }: Props) {
                 </Section>
               )}
 
-              {/* Differential Considerations — optional */}
+              {/* Differential Considerations */}
               {analysis.differentialConsiderations && (
                 <Section label="Differential Considerations" delay={0.16}>
                   <p className="text-sm text-[var(--color-text)] leading-7">
@@ -389,8 +381,6 @@ export default function AnalysisView({ id, onBack }: Props) {
               )}
 
             </div>
-            {/* ── end below-fold ── */}
-
           </motion.div>
         )}
       </AnimatePresence>

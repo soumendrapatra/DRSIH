@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/api.ts","./src/main.tsx","./src/vite-env.d.ts","./src/components/confidencemeter.tsx","./src/components/fundusimage.tsx","./src/components/imagecard.tsx","./src/components/scanningsequence.tsx","./src/components/typewritertext.tsx","./src/pages/analysisview.tsx","./src/pages/explorer.tsx"],"version":"6.0.3"}
