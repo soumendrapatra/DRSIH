@@ -4,13 +4,16 @@
   "description": "Retina AI Analysis Viewer — Wizard-of-Oz AI Demo",
   "private": true,
   "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "build:data": "node scripts/build-data.js",
-    "build": "node scripts/build-data.js && cd client && npm run build",
-    "server": "cd server && npm run dev",
-    "client": "cd client && npm run dev",
-    "dev": "concurrently --names server,client --prefix-colors cyan,yellow \"npm run server\" \"npm run client\"",
-    "install:all": "npm install && cd server && npm install && cd ../client && npm install"
+    "build": "node scripts/build-data.js && npm run build --workspace=client",
+    "server": "npm run dev --workspace=retina-ai-server",
+    "client": "npm run dev --workspace=client",
+    "dev": "concurrently --names server,client --prefix-colors cyan,yellow \"npm run server\" \"npm run client\""
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
