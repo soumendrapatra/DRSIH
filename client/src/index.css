@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg-base:    #090c10;
+    --color-bg-surface: #0d1117;
+    --color-bg-card:    #111820;
+    --color-border:     #1e2d3d;
+    --color-border-hi:  #2a4060;
+    --color-accent:     #00d4cc;
+    --color-accent-dim: #00a09a;
+    --color-amber:      #f0a500;
+    --color-text:       #c9d1d9;
+    --color-text-dim:   #6b7a8d;
+    --color-text-mono:  #7ee8e4;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--color-bg-base); }
+  ::-webkit-scrollbar-thumb { background: var(--color-border-hi); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-accent-dim); }
+
+  /* Selection */
+  ::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+}
+
+/* ─── Grid / Scanline texture ─────────────────────────────────────────────── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 212, 204, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 204, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-scanlines::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  z-index: 9999;
+}
+
+/* ─── Glow utilities ─────────────────────────────────────────────────────── */
+.glow-accent {
+  box-shadow: 0 0 0 1px var(--color-accent), 0 0 20px rgba(0, 212, 204, 0.15);
+}
+
+.glow-text {
+  text-shadow: 0 0 12px rgba(0, 212, 204, 0.6);
+}
+
+.glow-amber {
+  box-shadow: 0 0 0 1px var(--color-amber), 0 0 20px rgba(240, 165, 0, 0.15);
+}
+
+/* ─── Card hover effect ──────────────────────────────────────────────────── */
+.image-card {
+  border: 1px solid var(--color-border);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent), 0 0 24px rgba(0, 212, 204, 0.12), inset 0 0 24px rgba(0, 212, 204, 0.04);
+}
+
+/* ─── Scan-line sweep animation ──────────────────────────────────────────── */
+@keyframes scanSweep {
+  0%   { top: 0%; opacity: 1; }
+  95%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.scan-sweep {
+  position: absolute;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 212, 204, 0.3) 20%,
+    rgba(0, 212, 204, 0.9) 50%,
+    rgba(0, 212, 204, 0.3) 80%,
+    transparent 100%
+  );
+  box-shadow: 0 0 12px rgba(0, 212, 204, 0.8), 0 0 24px rgba(0, 212, 204, 0.4);
+  animation: scanSweep 1.8s ease-in-out forwards;
+}
+
+/* ─── Terminal cursor blink ──────────────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cursor-blink { animation: blink 1s step-end infinite; }

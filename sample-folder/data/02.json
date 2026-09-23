@@ -1,0 +1,31 @@
+{
+  "id": "02",
+  "category": "Grade 2 — Mild",
+  "displayName": "Sample 02",
+  "condition": "Glaucoma Suspect",
+  "confidence": 0.87,
+  "severity": "Mild",
+  "findings": [
+    "Cup-to-disc ratio estimated at 0.72 — elevated",
+    "Superior neuroretinal rim thinning detected",
+    "Asymmetric optic disc cupping between eyes noted",
+    "No definitive RNFL defect, but borderline thinning in superior arcade",
+    "IOP context required for complete risk stratification"
+  ],
+  "vesselAnalysis": {
+    "arteriovenousRatio": "3:4 (normal range)",
+    "tortuosity": "Moderate arterial tortuosity",
+    "neovascularization": "Absent"
+  },
+  "maculaStatus": "Macula appears healthy with no central involvement. No drusen or pigmentary changes observed.",
+  "opticDiscStatus": "Elevated CDR at 0.72; superior rim thinning present. Asymmetric cupping raises index of suspicion for early glaucomatous damage.",
+  "riskIndicators": [
+    "Family history of primary open-angle glaucoma",
+    "Elevated IOP suspected — requires tonometry confirmation",
+    "Age > 55 years with asymmetric CDR"
+  ],
+  "recommendation": "Urgent referral to glaucoma specialist. Baseline visual field testing (Humphrey 24-2) and OCT RNFL assessment essential. IOP measurement and gonioscopy recommended.",
+  "analysisSummary": "Optic disc morphology raises concern for glaucomatous damage. The elevated cup-to-disc ratio of 0.72 with observed rim thinning in the superior sector exceeds typical population norms. While no frank RNFL defect is confirmed by fundus imaging alone, the constellation of findings warrants full glaucoma workup. Early intervention can significantly slow disease progression.",
+  "differentialConsiderations": "Normal tension glaucoma cannot be excluded without IOP measurement. Optic neuritis considered but the absence of pain on eye movement and the chronicity of presentation make this unlikely. Physiological large disc (megalopapilla) remains a differential — nerve fiber layer OCT will discriminate.",
+  "processingTimeMs": 2103
+}

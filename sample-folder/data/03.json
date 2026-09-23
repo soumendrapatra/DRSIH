@@ -1,0 +1,27 @@
+{
+  "id": "03",
+  "category": "No apparent DR",
+  "displayName": "Sample 03",
+  "condition": "No Pathology Detected",
+  "confidence": 0.97,
+  "severity": "None",
+  "findings": [
+    "Optic disc margins well-defined, no cupping abnormality",
+    "Cup-to-disc ratio within normal range (~0.35)",
+    "Macula and foveal reflex appear intact",
+    "Retinal vasculature shows normal caliber and A/V ratio",
+    "No microaneurysms, hemorrhages, or exudates detected"
+  ],
+  "vesselAnalysis": {
+    "arteriovenousRatio": "2:3 (normal)",
+    "tortuosity": "None",
+    "neovascularization": "Absent"
+  },
+  "maculaStatus": "Macula clear with bright foveal reflex. No drusen, pigment epithelial detachment, or subretinal fluid.",
+  "opticDiscStatus": "Normal disc with well-defined margins. CDR 0.35, symmetrical. No pallor, swelling, or notching.",
+  "riskIndicators": [],
+  "recommendation": "No immediate intervention required. Recommend routine screening in 12 months. Advise patient to monitor for any sudden changes in vision.",
+  "analysisSummary": "The retinal image appears within normal limits across all assessed parameters. Vascular architecture, optic nerve head morphology, and macular integrity are all consistent with a healthy fundus. No signs of diabetic, hypertensive, glaucomatous, or degenerative pathology were identified. Routine follow-up is advised as per standard screening protocols.",
+  "differentialConsiderations": "No findings to suggest alternative pathology. Retinal findings are consistent with normal aging. Early age-related macular degeneration (AMD) excluded — no drusen detected. Retinal pigment epithelium (RPE) appears intact.",
+  "processingTimeMs": 1256
+}
